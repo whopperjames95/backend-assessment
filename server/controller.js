@@ -1,4 +1,4 @@
-
+//Let fortunes = ['Great Success is in your future']
 
 
 
@@ -21,6 +21,28 @@ module.exports = {
         let randomFortune = fortunes[randomIndex];
 
         res.status(200).send(randomFortune)
+    // },
+
+    //addFortune: (req, res) => {
+        // const {newFortune} = req.body
+
+        // fortunes.push(newFortune)
+
+        // res.status(200).send('fortune added.')
+    //}
+
+    // deleteFortune: (req, res) => {
+    //     const {id} = req.params
+
+        // if(fortunes[+id]) {
+    //     fortunes.splice(id, 1)
+
+    //     res.status(200).send('fortune removed')
+        // } else {
+        //     res.sendStatus(400)
+        // }
+    // }
+
     },
 
     getHeadsOrTails: (req, res) => {

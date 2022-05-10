@@ -29,7 +29,35 @@ const getFortune = () => {
 
 fortuneBtn.addEventListener('click', getFortune)
 
+// const newFortuneBtn = document.getElementById('new-fortune-button')
+// const newFortuneInput = document.getElementById('new-fortune-input')
 
+// const addFortune = () => {
+//     const newFortune = newFortuneInput.value
+//     axios.post("http://localhost:4000/api/fortune", {newFortune})
+//     .then(res => {
+//         alert(res.data)
+//         newFortuneInput.value = ''
+//     })
+// }
+
+// newFortuneBtn.addEventListener('click', addFortune)
+
+const deleteBtn = document.getElementById('delete-button')
+const deleteInput = document.getElementById('delete-input')
+
+const deleteFortune = () => {
+    axios.delete(`http://localhost:4000/api/fortune/${deleteInput.value}`)
+    .then(res => {
+        alert(res.data)
+        deleteInput.value = ''
+    })
+    .catch (err => {
+        alert('No fortune to delte.')
+    })
+}
+
+deleteBtn.addEventListener('click', deleteFortune)
 
 
 

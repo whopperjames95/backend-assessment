@@ -14,9 +14,12 @@ app.use(express.json());
 
 const { getCompliment } = require('./controller')
 
+// const {getComopliment, getFortune, addFortune, deleteFortune} = require('./controller')
 
 
-const { getFortune } = require('./controller')      
+
+const { getFortune } = require('./controller')
+      
 
 const { getHeadsOrTails } = require('./controller')
 
@@ -37,7 +40,14 @@ const { getJames, deleteJames } = require('./controller')
 
 app.get("/api/compliment", getCompliment);
 
-app.get("/api/fortune", getFortune);
+
+
+app.get("/api/fortune", getFortune)
+//app.post('/api/fortune', addFortune)     postman website, post, select raw body Json: { newFortune: "a friend is the coolest."}
+// app.delete('/api/fortune/:id', delteFortune)              postman 
+
+
+
 
 app.get("/api/coin", getHeadsOrTails);
 
