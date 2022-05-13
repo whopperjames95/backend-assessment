@@ -1,4 +1,4 @@
-//Let fortunes = ['Great Success is in your future']
+let fortunes = ["A dubious friend may be an enemy in camouflage.", "A faithful friend is a strong defense.", "A lifetime of happiness lies ahead of you.", "A person of words and not deeds is like a garden full of weeds.", "A soft voice may be awfully persuasive."]
 
 
 
@@ -15,33 +15,31 @@ module.exports = {
     },
 
     getFortune: (req, res) => {
-        const fortunes = ["A dubious friend may be an enemy in camouflage.", "A faithful friend is a strong defense.", "A lifetime of happiness lies ahead of you.", "A person of words and not deeds is like a garden full of weeds.", "A soft voice may be awfully persuasive."];
-
         let randomIndex = Math.floor(Math.random() * fortunes.length);
         let randomFortune = fortunes[randomIndex];
 
         res.status(200).send(randomFortune)
-    // },
+    },
 
-    //addFortune: (req, res) => {
-        // const {newFortune} = req.body
+    addFortune: (req, res) => {
+        const {newFortune} = req.body
 
-        // fortunes.push(newFortune)
+        fortunes.push(newFortune)
 
-        // res.status(200).send('fortune added.')
-    //}
+        res.status(200).send('Fortune added.')
+    },
 
-    // deleteFortune: (req, res) => {
-    //     const {id} = req.params
+    deleteFortune: (req, res) => {
+        const {id} = req.params
 
-        // if(fortunes[+id]) {
-    //     fortunes.splice(id, 1)
+        if(fortunes[+id]) {
+        fortunes.splice(id, 1)
 
-    //     res.status(200).send('fortune removed')
-        // } else {
-        //     res.sendStatus(400)
-        // }
-    // }
+        res.status(200).send('fortune removed')
+        } else {
+            res.sendStatus(400)
+        }
+    
 
     },
 
@@ -80,15 +78,8 @@ module.exports = {
            "4. James is from Arizona."];
 
         res.status(200).send(factss)
-    },
-    deleteJames: (req, res) => {
-        let index = james.findIndex((fact) => {
-            return fact.id === req.params.id
-        })
-
-        james.splice(facts, 1);
-        res.status(200).send(james);
     }
+
 }    
 
 
